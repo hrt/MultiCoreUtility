@@ -38,7 +38,7 @@ void releaseSegment(int shmid, int **shm)
  * This function is called by each process with possibly different arguments
  * At the moment, this function simply calculates prime numbers and then return the processNumber * 7
  */
-void processWork(int **shm, int processNumber)
+void processWork(int *shm, int processNumber)
 {
   clock_t begin, end;
   double time_spent;
