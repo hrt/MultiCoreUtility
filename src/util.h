@@ -1,3 +1,6 @@
+#ifndef UTIL_H
+#define UTIL_H
+
 #define _SVID_SOURCE
 #define _POSIX_C_SOURCE 199309L
 #include <sys/types.h>
@@ -14,4 +17,8 @@
 #define MAX_PRIME 100000
 
 void processWork(int *shm, int processNumber);
+void releaseSegment(int shmid, int *shm);
+int initialiseShmSegment(int *shm);
 void getTime(struct timespec *time);
+
+#endif
