@@ -2,6 +2,8 @@ A proof of concept of making use of multiple cores on a system without any extra
 
 Specifically, for ai contests such as theaigames.com or riddles.io where the compile time arguments are fixed and do not support multi threading.
 
+The program makes use of ```fork()``` and shared memory to achieve this.
+
 
 ## Compiling
 
