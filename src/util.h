@@ -17,8 +17,8 @@
 #define MAX_PRIME 100000
 
 void processWork(int *shm, int processNumber);
-void releaseSegment(int shmid, int *shm);
-int initialiseShmSegment(int *shm);
+void releaseSegment(int shmid, int **shm);
+int initialiseShmSegment(int **shm);
 void getTime(struct timespec *time);
 
 #endif

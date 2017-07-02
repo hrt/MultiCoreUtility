@@ -1,6 +1,6 @@
 #include "util.h"
 
-int initialiseShmSegment(int *shm)
+int initialiseShmSegment(int **shm)
 {
   int shmid;
   /*
@@ -15,7 +15,7 @@ int initialiseShmSegment(int *shm)
   /*
    * Now we attach the segment to our data space.
    */
-  if ((shm = shmat(shmid, NULL, 0)) == (int *) -1)
+  if ((shm* = shmat(shmid, NULL, 0)) == (int *) -1)
   {
     perror("shmat");
     exit(EXIT_FAILURE);
@@ -24,9 +24,9 @@ int initialiseShmSegment(int *shm)
   return shmid;
 }
 
-void releaseSegment(int shmid, int *shm)
+void releaseSegment(int shmid, int **shm)
 {
-  if (shmdt(shm))
+  if (shmdt(shm*))
   {
     perror("detatch failed");
   }
@@ -38,7 +38,7 @@ void releaseSegment(int shmid, int *shm)
  * This function is called by each process with possibly different arguments
  * At the moment, this function simply calculates prime numbers and then return the processNumber * 7
  */
-void processWork(int *shm, int processNumber)
+void processWork(int **shm, int processNumber)
 {
   clock_t begin, end;
   double time_spent;
