@@ -15,7 +15,7 @@ int initialiseShmSegment(int **shm)
   /*
    * Now we attach the segment to our data space.
    */
-  if ((shm* = shmat(shmid, NULL, 0)) == (int *) -1)
+  if ((*shm = shmat(shmid, NULL, 0)) == (int *) -1)
   {
     perror("shmat");
     exit(EXIT_FAILURE);
@@ -26,7 +26,7 @@ int initialiseShmSegment(int **shm)
 
 void releaseSegment(int shmid, int **shm)
 {
-  if (shmdt(shm*))
+  if (shmdt(*shm))
   {
     perror("detatch failed");
   }
