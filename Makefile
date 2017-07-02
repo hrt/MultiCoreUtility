@@ -1,6 +1,5 @@
 CC			= gcc
 CFLAGS  = -std=c99 -Wall -Werror -pedantic
-SRC			= src/
 OBJDIR	= obj
 SRCDIR	= src
 OUTDIR	= bin
