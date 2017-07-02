@@ -16,7 +16,7 @@ int main()
 
   getTime(&start);
 
-  shmid = initialiseShmSegment(shm);
+  shmid = initialiseShmSegment(&shm);
 
   /*
    * Forking processes with different threadNumber arguments
@@ -64,7 +64,7 @@ int main()
 
   fprintf(stderr, "PARENT : Time spent : %lf\n", accum);
 
-  releaseSegment(shmid, shm);
+  releaseSegment(shmid, &shm);
 
   return 0;
 }
